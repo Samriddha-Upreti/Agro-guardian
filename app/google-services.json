@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "788862158861",
+    "project_id": "agribuddy-24059",
+    "storage_bucket": "agribuddy-24059.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:788862158861:android:25465e56b34cccd8ba6d44",
+        "android_client_info": {
+          "package_name": "com.agroguardian.agribuddy"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDMiIDNT1FQZ76O90BUUbKilj4xAo3y1Yw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
