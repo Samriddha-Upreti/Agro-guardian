@@ -6,7 +6,6 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import androidx.appcompat.app.AppCompatActivity
-import com.example.agribuddy.LanguageSelectionActivity
 
 class SplashActivity : AppCompatActivity() {
 
@@ -18,14 +17,14 @@ class SplashActivity : AppCompatActivity() {
             val prefs = getSharedPreferences("app_prefs", MODE_PRIVATE)
             val selectedLang = prefs.getString("selected_language", null)
 
-            if (selectedLang == null) {
-                // If no language has been selected yet, open LanguageSelectionActivity
-                startActivity(Intent(this, LanguageSelectionActivity::class.java))
+            // If language is selected, navigate to RegisterActivity
+            if (selectedLang != null) {
+                startActivity(Intent(this, RegisterActivity::class.java))
             } else {
-                // If already selected, go to main screen
-                startActivity(Intent(this, MainActivity::class.java))
+                // If language is not selected, navigate to LanguageSelectionActivity
+                startActivity(Intent(this, LanguageSelectionActivity::class.java))
             }
-            finish()
-        }, 2500)
+            finish() // Finish the splash screen activity
+        }, 2500) // 2.5 seconds delay
     }
 }

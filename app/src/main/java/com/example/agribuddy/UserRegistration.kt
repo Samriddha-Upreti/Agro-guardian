@@ -3,6 +3,7 @@ package com.example.agribuddy
 import android.content.Intent
 import android.os.Bundle
 import android.util.Patterns
+import android.widget.ProgressBar
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.agribuddy.databinding.ActivityUserRegistrationBinding
@@ -13,6 +14,7 @@ class RegisterActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityUserRegistrationBinding
     private lateinit var auth: FirebaseAuth
+    private lateinit var progressBar: ProgressBar
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,6 +23,9 @@ class RegisterActivity : AppCompatActivity() {
 
         // Initialize Firebase Auth
         auth = FirebaseAuth.getInstance()
+
+        // Initialize ProgressBar (optional, for UX improvement)
+        progressBar = binding.progressBar
 
         binding.registerButton.setOnClickListener {
             registerUser()
@@ -38,6 +43,7 @@ class RegisterActivity : AppCompatActivity() {
         val password = binding.editPassword.text.toString()
         val confirmPassword = binding.editConfirmPassword.text.toString()
 
+        // Input validations
         when {
             name.isEmpty() -> {
                 binding.editName.error = "Full name is required"
@@ -75,6 +81,10 @@ class RegisterActivity : AppCompatActivity() {
                 return
             }
             else -> {
+                // Show loading spinner
+                progressBar.visibility = ProgressBar.VISIBLE
+
+                // Firebase Auth: create user with email and password
                 auth.createUserWithEmailAndPassword(email, password)
                     .addOnCompleteListener { task ->
                         if (task.isSuccessful) {
@@ -85,22 +95,45 @@ class RegisterActivity : AppCompatActivity() {
                                 .build()
                             user?.updateProfile(profileUpdates)
 
+                            // Save the registration status in SharedPreferences
+                            val prefs = getSharedPreferences("app_prefs", MODE_PRIVATE)
+                            prefs.edit().putBoolean("is_registered", true).apply()
+
+                            // Show success message and navigate to the Main Activity
                             Toast.makeText(
                                 this,
                                 "Registration successful!",
                                 Toast.LENGTH_SHORT
                             ).show()
+
+                            // Clear input fields after success
+                            clearInputFields()
+
+                            // Navigate to MainActivity
                             startActivity(Intent(this, MainActivity::class.java))
                             finish()
+
                         } else {
+                            // Show error message on failure
                             Toast.makeText(
                                 this,
                                 "Registration failed: ${task.exception?.message}",
                                 Toast.LENGTH_LONG
                             ).show()
                         }
+
+                        // Hide loading spinner after registration attempt
+                        progressBar.visibility = ProgressBar.GONE
                     }
             }
         }
+    }
+
+    // Helper function to clear input fields
+    private fun clearInputFields() {
+        binding.editName.text.clear()
+        binding.editEmail.text.clear()
+        binding.editPassword.text.clear()
+        binding.editConfirmPassword.text.clear()
     }
 }

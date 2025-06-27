@@ -27,19 +27,20 @@ class LanguageSelectionActivity : AppCompatActivity() {
     }
 
     private fun setLocaleAndContinue(languageCode: String) {
+        // Set the selected language
         val locale = Locale(languageCode)
         Locale.setDefault(locale)
         val config = Configuration()
         config.setLocale(locale)
         resources.updateConfiguration(config, resources.displayMetrics)
 
-        // Save preference
+        // Save the selected language in SharedPreferences
         val prefs = getSharedPreferences("app_prefs", MODE_PRIVATE)
         prefs.edit().putString("selected_language", languageCode).apply()
 
-        // Go to main activity
-        val intent = Intent(this, MainActivity::class.java)
+        // Go to registration activity after language is selected
+        val intent = Intent(this, RegisterActivity::class.java)
         startActivity(intent)
-        finish()
+        finish() // Finish LanguageSelectionActivity
     }
 }
