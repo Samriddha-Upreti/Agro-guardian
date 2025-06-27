@@ -1,0 +1,85 @@
+<resources>
+    <!-- App Name -->
+    <string name="app_name">अग्रीबडी</string>
+
+    <!-- Navigation Strings -->
+    <string name="nav_dashboard">ड्यासबोर्ड</string>
+    <string name="nav_weather">मौसम</string>
+    <string name="nav_marketplace">बजार</string>
+    <string name="nav_alerts">अलर्ट/सूचनाहरू</string>
+    <string name="nav_profile">प्रोफाइल/सेटिङहरू</string>
+    <string name="nav_alerts_badge">%d नयाँ</string>
+    <string name="settings_label">सेटिङहरू</string>
+    <string name="logout_label">लगआउट</string>
+
+    <!-- Fragment Default Strings -->
+    <string name="hello_blank_fragment">नमस्ते, ब्लाङ्क फ्रेगमेन्ट</string>
+    <string name="open">खोल्नुहोस्</string>
+    <string name="close">बन्द गर्नुहोस्</string>
+
+    <!-- Weather Strings -->
+    <string name="weather_label">मौसम</string>
+    <string name="temperature_format">%.1f°C</string>
+    <string name="feels_like_format">महसुस गरिरहेको तापमान: %.1f°C</string>
+    <string name="humidity_format">आर्द्रता: %d%%</string>
+    <string name="wind_speed_format">हावा गति: %.1f मिटर/सेकन्ड</string>
+    <string name="pressure_format">दबाब: %.1f hPa</string>
+    <string name="visibility_format">दृष्टिमानिता: %.1f किमी</string>
+    <string name="sunrise_format">सूर्योदय: %s</string>
+
+    <!-- Weather Labels -->
+    <string name="feels_like_label">महसुस गरिरहेको तापमान</string>
+    <string name="humidity_label">आर्द्रता</string>
+    <string name="wind_label">हावा</string>
+    <string name="pressure_label">दबाब</string>
+    <string name="visibility_label">दृष्टिमानिता</string>
+    <string name="sunrise_label">सूर्योदय</string>
+    <string name="sunset_format">सूर्यास्त: %s</string>
+
+    <!-- Weather Icon Descriptions -->
+    <string name="weather_icon">मौसम आइकन</string>
+    <string name="feels_like_icon">महसुस गरिरहेको तापमान आइकन</string>
+    <string name="humidity_icon">आर्द्रता आइकन</string>
+    <string name="wind_icon">हावा आइकन</string>
+    <string name="pressure_icon">दबाब आइकन</string>
+    <string name="visibility_icon">दृष्टिमानिता आइकन</string>
+    <string name="sunrise_icon">सूर्योदय आइकन</string>
+
+    <!-- User Registration -->
+    <string name="already_have_account">पहिले नै खाता छ? यहाँ लगइन गर्नुहोस्</string>
+    <string name="register_title">कृषक दर्ता</string>
+    <string name="hint_full_name">पूरा नाम</string>
+    <string name="hint_confirm_password">पासवर्ड पुष्टि गर्नुहोस्</string>
+    <string name="btn_register">दर्ता गर्नुहोस्</string>
+    <string name="error_empty_fields">सबै फिल्डहरू आवश्यक छन्।</string>
+    <string name="error_password_mismatch">पासवर्ड मिल्दैन।</string>
+    <string name="registration_success">दर्ता सफल</string>
+    <string name="registration_error">त्रुटि: %1$s</string>
+    <string name="name_description">पूरा नाम</string>
+    <string name="email_description">इमेल ठेगाना</string>
+    <string name="password_description">पासवर्ड (कम्तीमा ८ अक्षर)</string>
+    <string name="confirm_password_description">पासवर्ड पुष्टि गर्नुहोस्</string>
+    <!-- Empty string for dividers -->
+    <string name="empty_divider"></string>
+
+    <!-- Login Page -->
+    <string name="login_title">लगइन</string>
+    <string name="hint_email">तपाईंको इमेल प्रविष्ट गर्नुहोस्</string>
+    <string name="hint_password">तपाईंको पासवर्ड प्रविष्ट गर्नुहोस्</string>
+    <string name="btn_login">लगइन गर्नुहोस्</string>
+    <string name="register_prompt">खाता छैन? यहाँ दर्ता गर्नुहोस्</string>
+    <string name="forgot_password">पासवर्ड बिर्सनुभयो?</string>
+
+    <!-- MarketPlace Fragment -->
+    <string name="marketplace">बजार</string>
+    <string name="search_products">बिउँ, उपकरण आदि खोज्नुहोस्</string>
+    <string name="product_name">उत्पादन नाम</string>
+    <string name="product_price">मूल्य</string>
+    <string name="post_product">उत्पादन पोस्ट गर्नुहोस्</string>
+    <string name="buy_now">अहिले किन्नुहोस्</string>
+    <string name="add_to_cart">कार्टमा थप्नुहोस्</string>
+
+    <!--    Settings Page-->
+    <string name="change_language">भाषा परिवर्तन गर्नुहोस्</string>
+
+</resources>

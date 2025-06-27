@@ -1,0 +1,78 @@
+package com.example.agribuddy
+
+import android.os.Bundle
+import android.view.MenuItem
+import android.widget.ImageView
+import android.widget.TextView
+import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.appcompat.app.AppCompatActivity
+import com.example.agribuddy.databinding.ActivityMainBinding
+import com.example.agribuddy.ui.settings.settings
+
+class MainActivity : AppCompatActivity() {
+
+    // 🔸 Add this function to apply saved locale
+    override fun attachBaseContext(newBase: android.content.Context) {
+        super.attachBaseContext(LocaleHelper.applyLocale(newBase))
+    }
+
+    private lateinit var binding: ActivityMainBinding
+    private lateinit var drawerToggle: ActionBarDrawerToggle
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        // Toolbar and drawer setup
+        setSupportActionBar(binding.toolbar)
+        drawerToggle = ActionBarDrawerToggle(
+            this,
+            binding.drawerLayout,
+            binding.toolbar,
+            R.string.open,
+            R.string.close
+        )
+        binding.drawerLayout.addDrawerListener(drawerToggle)
+        drawerToggle.syncState()
+
+        // Navigation menu click handler
+        binding.navView.setNavigationItemSelectedListener { menuItem ->
+            when (menuItem.itemId) {
+                R.id.nav_dashboard -> replaceFragment(DashboardFragment())
+                R.id.nav_settings -> replaceFragment(settings())
+                R.id.nav_weather -> replaceFragment(WeatherFragment())
+                R.id.nav_marketplace -> replaceFragment(MarketplaceFragment())
+
+            }
+            binding.drawerLayout.closeDrawers()
+            true
+        }
+
+        if (savedInstanceState == null) {
+            replaceFragment(DashboardFragment())
+        }
+
+        updateNavHeader()
+    }
+
+    private fun updateNavHeader() {
+        val headerView = binding.navView.getHeaderView(0)
+        val profileName = headerView.findViewById<TextView>(R.id.profile_name)
+        val profileImage = headerView.findViewById<ImageView>(R.id.profile_image)
+
+        profileName.text = "Sandesh Prasai"
+        // Load profile image logic if needed
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return drawerToggle.onOptionsItemSelected(item) || super.onOptionsItemSelected(item)
+    }
+
+    private fun replaceFragment(fragment: androidx.fragment.app.Fragment) {
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.fragment_container, fragment)
+            .addToBackStack(null)
+            .commit()
+    }
+}
