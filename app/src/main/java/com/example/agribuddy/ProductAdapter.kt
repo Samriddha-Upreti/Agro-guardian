@@ -1,5 +1,6 @@
-package com.example.agribuddy.adapter
+package com.example.agribuddy
 
+import android.net.Uri
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -17,11 +18,10 @@ class ProductAdapter(private val productList: List<Product>) :
             binding.tvProductName.text = product.name
             binding.tvProductPrice.text = product.price
 
-            // ✅ Handle both imageResId and imageUri
             when {
                 product.imageUri != null -> binding.imgProduct.setImageURI(product.imageUri)
                 product.imageResId != null -> binding.imgProduct.setImageResource(product.imageResId)
-                else -> binding.imgProduct.setImageResource(R.drawable.ic_placeholder) // fallback
+                else -> binding.imgProduct.setImageResource(R.drawable.ic_placeholder)
             }
         }
     }
