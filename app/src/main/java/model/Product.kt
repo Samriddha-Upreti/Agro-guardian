@@ -1,10 +1,17 @@
 package com.example.agribuddy.model
 
-import android.net.Uri
-
 data class Product(
     val name: String,
-    val price: String,
-    val imageResId: Int? = null,  // for drawable images
-    val imageUri: Uri? = null     // for gallery images
-)
+    val price: Double,
+    val description: String,
+    val imageUrl: String = ""
+) {
+    fun toMap(): Map<String, Any> {
+        return mapOf(
+            "name" to name,
+            "price" to price,
+            "description" to description,
+            "imageUrl" to imageUrl
+        )
+    }
+}

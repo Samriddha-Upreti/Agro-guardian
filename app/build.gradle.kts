@@ -2,6 +2,9 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     id("com.google.gms.google-services")
+//    id("com.android.application")
+    id("kotlin-android")
+    id("kotlin-kapt") // Add this line for kapt support
 }
 
 android {
@@ -70,6 +73,10 @@ dependencies {
     implementation(libs.androidx.navigation.fragment.ktx)
     implementation(libs.androidx.navigation.ui.ktx)
 
+    implementation("com.github.bumptech.glide:glide:4.12.0")
+    kapt("com.github.bumptech.glide:compiler:4.12.0") // Use kapt instead of annotationProcessor
+    implementation("com.google.firebase:firebase-firestore-ktx:24.9.1")
+    implementation("com.google.firebase:firebase-storage-ktx:20.3.0") // For image uploads
     // Testing
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

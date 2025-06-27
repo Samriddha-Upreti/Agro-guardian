@@ -4,7 +4,6 @@ import android.net.Uri
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.agribuddy.R
 import com.example.agribuddy.databinding.ItemProductBinding
 import com.example.agribuddy.model.Product
 
@@ -16,13 +15,15 @@ class ProductAdapter(private val productList: List<Product>) :
 
         fun bind(product: Product) {
             binding.tvProductName.text = product.name
-            binding.tvProductPrice.text = product.price
+//            binding.tvProductPrice.text = product.price
 
-            when {
-                product.imageUri != null -> binding.imgProduct.setImageURI(product.imageUri)
-                product.imageResId != null -> binding.imgProduct.setImageResource(product.imageResId)
-                else -> binding.imgProduct.setImageResource(R.drawable.ic_placeholder)
-            }
+            // 🔄 Load image safely from URI string
+//            val uri = product.imageUri?.toString()
+//            if (!uri.isNullOrEmpty()) {
+//                binding.imgProduct.setImageURI(Uri.parse(uri))
+//            } else {
+//                binding.imgProduct.setImageResource(R.drawable.ic_placeholder)
+//            }
         }
     }
 
@@ -35,9 +36,9 @@ class ProductAdapter(private val productList: List<Product>) :
         return ProductViewHolder(binding)
     }
 
-    override fun getItemCount(): Int = productList.size
-
     override fun onBindViewHolder(holder: ProductViewHolder, position: Int) {
         holder.bind(productList[position])
     }
+
+    override fun getItemCount(): Int = productList.size
 }
