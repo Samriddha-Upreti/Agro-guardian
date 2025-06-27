@@ -1,6 +1,7 @@
 <resources>
     <!-- App Name -->
     <string name="app_name">अग्रीबडी</string>
+    <string name="add_product">उत्पादन थप्नुहोस्</string>
 
     <!-- Navigation Strings -->
     <string name="nav_dashboard">ड्यासबोर्ड</string>
@@ -51,7 +52,7 @@
     <string name="hint_full_name">पूरा नाम</string>
     <string name="hint_confirm_password">पासवर्ड पुष्टि गर्नुहोस्</string>
     <string name="btn_register">दर्ता गर्नुहोस्</string>
-    <string name="error_empty_fields">सबै फिल्डहरू आवश्यक छन्।</string>
+<!--    <string name="error_empty_fields">सबै फिल्डहरू आवश्यक छन्।</string>-->
     <string name="error_password_mismatch">पासवर्ड मिल्दैन।</string>
     <string name="registration_success">दर्ता सफल</string>
     <string name="registration_error">त्रुटि: %1$s</string>
@@ -81,5 +82,13 @@
 
     <!--    Settings Page-->
     <string name="change_language">भाषा परिवर्तन गर्नुहोस्</string>
+
+    <!-- Product Addition (From new request) -->
+    <string name="hint_product_name">उत्पादनको नाम</string>
+    <string name="hint_product_price">मूल्य (रु)</string>
+    <string name="hint_product_description">विवरण</string>
+    <string name="btn_add_product">थप गर्नुहोस्</string>
+    <string name="error_empty_fields">कृपया सबै विवरणहरू भर्नुहोस्</string>
+    <string name="btn_pick_image">चित्र चयन गर्नुहोस्</string>
 
 </resources>

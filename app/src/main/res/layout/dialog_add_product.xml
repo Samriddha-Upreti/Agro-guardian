@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- Product Name -->
+    <EditText
+        android:id="@+id/et_product_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/hint_product_name"
+        android:inputType="text" />
+
+    <!-- Product Price -->
+    <EditText
+        android:id="@+id/et_product_price"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/hint_product_price"
+        android:inputType="numberDecimal"
+        android:layout_marginTop="12dp"/>
+
+    <!-- Product Description -->
+    <EditText
+        android:id="@+id/et_product_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/hint_product_description"
+        android:inputType="textMultiLine"
+        android:minLines="3"
+        android:layout_marginTop="12dp"/>
+
+    <!-- Product Image -->
+    <ImageView
+        android:id="@+id/iv_product_image"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:src="@drawable/ic_placeholder"
+        android:scaleType="centerCrop"
+        android:layout_marginTop="12dp"/>
+
+    <!-- Button to pick an image -->
+    <Button
+        android:id="@+id/btn_pick_image"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_pick_image"
+        android:layout_marginTop="12dp"/>
+
+    <!-- Submit Button -->
+    <Button
+        android:id="@+id/btn_submit_product"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_add_product"
+        android:layout_marginTop="16dp"/>
+</LinearLayout>
