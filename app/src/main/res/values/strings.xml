@@ -16,7 +16,7 @@
     <string name="nav_weather">Weather</string>
     <string name="nav_marketplace">Marketplace</string>
     <string name="nav_alerts">Alerts/Notifications</string>
-    <string name="nav_profile">Profile/Settings</string>
+    <string name="nav_profile">Sensors</string>
     <string name="nav_alerts_badge">%d new</string>
     <string name="settings_label">Settings</string>
     <string name="logout_label">Logout</string>

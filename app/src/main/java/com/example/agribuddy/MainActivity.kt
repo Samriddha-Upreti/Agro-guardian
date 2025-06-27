@@ -1,5 +1,6 @@
 package com.example.agribuddy
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
 import android.widget.ImageView
@@ -43,6 +44,10 @@ class MainActivity : AppCompatActivity() {
                 R.id.nav_settings -> replaceFragment(settings())
                 R.id.nav_weather -> replaceFragment(WeatherFragment())
                 R.id.nav_marketplace -> replaceFragment(MarketplaceFragment())
+                R.id.sensors -> {
+                    val intent = Intent(this, SensorsActivity::class.java)
+                    startActivity(intent)
+                }
             }
             binding.drawerLayout.closeDrawers()
             true

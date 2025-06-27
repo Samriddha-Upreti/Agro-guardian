@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- PIR Sensor Data -->
+    <TextView
+        android:id="@+id/pirSensorLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="PIR Sensor (Motion Detection):"
+        android:textSize="18sp"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/pirSensorValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Loading..."
+        android:layout_marginTop="8dp"
+        android:textSize="16sp"/>
+
+    <!-- DHT11 Sensor Data -->
+    <TextView
+        android:id="@+id/dht11Label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="DHT11 Sensor:"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginTop="16dp"/>
+
+    <TextView
+        android:id="@+id/temperatureValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Temperature: Loading..."
+        android:layout_marginTop="8dp"
+        android:textSize="16sp"/>
+
+    <TextView
+        android:id="@+id/humidityValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Humidity: Loading..."
+        android:layout_marginTop="4dp"
+        android:textSize="16sp"/>
+
+    <!-- Soil Moisture Sensor Data -->
+    <TextView
+        android:id="@+id/moistureLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Soil Moisture:"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginTop="16dp"/>
+
+    <TextView
+        android:id="@+id/moistureValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Moisture Level: Loading..."
+        android:layout_marginTop="8dp"
+        android:textSize="16sp"/>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="16dp"/>
+
+</LinearLayout>

@@ -77,8 +77,10 @@ dependencies {
     implementation(libs.firebase.database.ktx)
     kapt("com.github.bumptech.glide:compiler:4.12.0") // Use kapt instead of annotationProcessor
     implementation("com.google.firebase:firebase-firestore-ktx:24.9.1")
-    implementation("com.google.firebase:firebase-storage-ktx:20.3.0") // For image uploads
+    implementation("com.google.firebase:firebase-storage-ktx:20.3.0")
+    // For image uploads
     // Testing
+    implementation("com.google.android.gms:play-services-base:18.2.0")
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

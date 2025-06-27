@@ -17,6 +17,9 @@
         android:theme="@style/Theme.AgriBuddy"
         tools:targetApi="31">
         <activity
+            android:name=".SensorsData"
+            android:exported="false" />
+        <activity
             android:name=".ProductView"
             android:exported="false" />
         <activity
@@ -33,7 +36,6 @@
             android:name=".Product_ViewActivity"
             android:exported="false"
             android:theme="@style/Theme.AgriBuddy" />
-
         <activity
             android:name=".LoginActivity"
             android:exported="false" />
@@ -45,6 +47,9 @@
             android:exported="false" />
         <activity
             android:name=".LanguageSelectionActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SensorsActivity"
             android:exported="false" />
         <activity
             android:name=".SplashActivity"
