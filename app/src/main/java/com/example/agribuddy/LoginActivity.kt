@@ -3,17 +3,22 @@ package com.example.agribuddy
 import android.content.Intent
 import android.os.Bundle
 import android.util.Patterns
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.agribuddy.databinding.ActivityLoginBinding
+import com.google.firebase.auth.FirebaseAuth
 
 class LoginActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityLoginBinding
+    private lateinit var auth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        auth = FirebaseAuth.getInstance()
 
         binding.loginButton.setOnClickListener {
             validateLoginForm()
@@ -24,7 +29,7 @@ class LoginActivity : AppCompatActivity() {
         }
 
         binding.textForgotPassword.setOnClickListener {
-
+            // Optional: implement forgot password
         }
     }
 
@@ -46,23 +51,34 @@ class LoginActivity : AppCompatActivity() {
                 binding.editLoginPassword.requestFocus()
             }
             else -> {
-
-                showLoginSuccess()
+                loginUser(email, password)
             }
         }
     }
 
-    private fun showLoginSuccess() {
-        // Replace this with your actual success handling
-        binding.editLoginEmail.error = null
-        binding.editLoginPassword.error = null
-        // Toast.makeText(this, "Login validation successful", Toast.LENGTH_SHORT).show()
+    private fun loginUser(email: String, password: String) {
+        auth.signInWithEmailAndPassword(email, password)
+            .addOnCompleteListener { task ->
+                if (task.isSuccessful) {
+                    val user = auth.currentUser
+                    CurrentUser.name = user?.displayName
+                    CurrentUser.email = user?.email
+
+                    Toast.makeText(this, "Welcome, ${CurrentUser.name ?: "User"}!", Toast.LENGTH_SHORT).show()
+                    startActivity(Intent(this, MainActivity::class.java))
+                    finish()
+                } else {
+                    Toast.makeText(
+                        this,
+                        "Login failed: ${task.exception?.message}",
+                        Toast.LENGTH_LONG
+                    ).show()
+                }
+            }
     }
 
     private fun navigateToRegister() {
         startActivity(Intent(this, RegisterActivity::class.java))
         finish()
     }
-
-
 }
