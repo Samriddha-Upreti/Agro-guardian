@@ -74,6 +74,7 @@ dependencies {
     implementation(libs.androidx.navigation.ui.ktx)
 
     implementation("com.github.bumptech.glide:glide:4.12.0")
+    implementation(libs.firebase.database.ktx)
     kapt("com.github.bumptech.glide:compiler:4.12.0") // Use kapt instead of annotationProcessor
     implementation("com.google.firebase:firebase-firestore-ktx:24.9.1")
     implementation("com.google.firebase:firebase-storage-ktx:20.3.0") // For image uploads

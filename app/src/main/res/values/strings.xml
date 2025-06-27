@@ -2,9 +2,12 @@
     <!-- App Name -->
     <string name="app_name">AgriBuddy</string>
 
+    <string name="no_values_added">No values Added</string>
     <!-- Common Strings -->
     <string name="open">Open</string>
     <string name="close">Close</string>
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
     <string name="empty_divider"></string>
     <string name="error_empty_fields">All fields are required.</string>
 
@@ -20,9 +23,8 @@
     <string name="change_language">Change Language</string>
 
     <!-- Fragment Strings -->
+
     <string name="hello_blank_fragment">Hello, Blank Fragment</string>
-    <string name="first_fragment_label">First Fragment</string>
-    <string name="second_fragment_label">Second Fragment</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
     <string name="lorem_ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget augue ac nisi fermentum ultrices.</string>

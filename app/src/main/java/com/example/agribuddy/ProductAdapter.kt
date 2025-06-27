@@ -1,29 +1,29 @@
 package com.example.agribuddy
 
-import android.net.Uri
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.agribuddy.databinding.ItemProductBinding
-import com.example.agribuddy.model.Product
 
-class ProductAdapter(private val productList: List<Product>) :
-    RecyclerView.Adapter<ProductAdapter.ProductViewHolder>() {
+class ProductAdapter(
+    private val products: List<Product>,
+    private val onItemClick: (Product) -> Unit = {}
+) : RecyclerView.Adapter<ProductAdapter.ProductViewHolder>() {
 
     inner class ProductViewHolder(private val binding: ItemProductBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
         fun bind(product: Product) {
+            // Correctly access binding without 'holder'
             binding.tvProductName.text = product.name
-//            binding.tvProductPrice.text = product.price
+            binding.tvProductPrice.text = product.getPriceString()
 
-            // 🔄 Load image safely from URI string
-//            val uri = product.imageUri?.toString()
-//            if (!uri.isNullOrEmpty()) {
-//                binding.imgProduct.setImageURI(Uri.parse(uri))
-//            } else {
-//                binding.imgProduct.setImageResource(R.drawable.ic_placeholder)
-//            }
+            Glide.with(binding.root.context)
+                .load(product.imageUrl)
+                .placeholder(R.drawable.ic_placeholder)
+                .error(R.drawable.sample_data)
+                .into(binding.imgProduct)
         }
     }
 
@@ -37,8 +37,10 @@ class ProductAdapter(private val productList: List<Product>) :
     }
 
     override fun onBindViewHolder(holder: ProductViewHolder, position: Int) {
-        holder.bind(productList[position])
+        val product = products[position]
+        holder.bind(product)
+        holder.itemView.setOnClickListener { onItemClick(product) }
     }
 
-    override fun getItemCount(): Int = productList.size
+    override fun getItemCount() = products.size
 }

@@ -2,8 +2,15 @@
     <!-- App Name -->
     <string name="app_name">अग्रीबडी</string>
     <string name="add_product">उत्पादन थप्नुहोस्</string>
+    <string name="no_values_added">No values Added</string>
 
     <!-- Navigation Strings -->
+    <string name="next">अगाडि</string>
+    <string name="previous">पछाडि</string>
+    <string name="lorem_ipsum">लोरेम इप्सम डलर सिट अमेट, कन्सेक्टेचुर एडिपिसिङ एलिट। नलाम एगेट अ‍ैगुे अक निसि फेर्मेन्टम उल्ट्रिस।</string>
+    <string name="first_fragment_label">पहिलो खण्ड</string>
+    <string name="second_fragment_label">दोस्रो खण्ड</string>
+
     <string name="nav_dashboard">ड्यासबोर्ड</string>
     <string name="nav_weather">मौसम</string>
     <string name="nav_marketplace">बजार</string>
