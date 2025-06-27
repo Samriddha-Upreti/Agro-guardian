@@ -13,3 +13,32 @@
 .externalNativeBuild
 .cxx
 local.properties
+
+# Gradle
+.gradle/
+**/build/
+
+# Local properties
+local.properties
+
+# IDE
+.idea/
+*.iml
+
+# Keystore files
+*.jks
+*.keystore
+
+# Logs
+*.log
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# Firebase Crashlytics
+crashlytics-build.properties
+
+# Compose preview
+**/build/**/*.preview
+
