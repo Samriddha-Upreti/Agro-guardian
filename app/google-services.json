@@ -7,9 +7,9 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:788862158861:android:25465e56b34cccd8ba6d44",
+        "mobilesdk_app_id": "1:788862158861:android:99fc4feefc5028ddba6d44",
         "android_client_info": {
-          "package_name": "com.agroguardian.agribuddy"
+          "package_name": "com.example.agribuddy"
         }
       },
       "oauth_client": [],
