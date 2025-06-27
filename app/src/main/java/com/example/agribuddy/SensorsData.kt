@@ -1,6 +1,8 @@
 package com.example.agribuddy
 
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.util.Log
 import android.view.View
 import android.widget.ProgressBar
@@ -19,6 +21,10 @@ class SensorsActivity : AppCompatActivity() {
 
     private val TAG = "SensorsActivity"
 
+    // Interval time in milliseconds (e.g., 10 seconds)
+    private val FETCH_INTERVAL: Long = 3000  // 10 seconds
+    private val handler = Handler(Looper.getMainLooper())
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sensors_data) // Make sure this layout is named activity_sensors.xml
@@ -30,7 +36,21 @@ class SensorsActivity : AppCompatActivity() {
         moistureValue = findViewById(R.id.moistureValue)
         progressBar = findViewById(R.id.progressBar)
 
+        // Fetch data initially and start periodic fetch
         fetchSensorData()
+        startPeriodicDataFetch()
+    }
+
+    private fun startPeriodicDataFetch() {
+        // Runnable to periodically fetch data
+        val fetchDataRunnable = object : Runnable {
+            override fun run() {
+                fetchSensorData()
+                handler.postDelayed(this, FETCH_INTERVAL)  // Schedule next data fetch
+            }
+        }
+
+        handler.post(fetchDataRunnable)  // Start the periodic data fetch
     }
 
     private fun fetchSensorData() {
@@ -42,7 +62,6 @@ class SensorsActivity : AppCompatActivity() {
         ref.get().addOnSuccessListener { snapshot ->
             progressBar.visibility = View.GONE
             Log.d(TAG, "Data fetched: ${snapshot.value}")
-            Toast.makeText(this, "✅ Data loaded!", Toast.LENGTH_SHORT).show()
 
             // PIR
             val pirRaw = snapshot.child("pir").getValue(Long::class.java)
@@ -75,7 +94,6 @@ class SensorsActivity : AppCompatActivity() {
         }
     }
 
-
     private fun formatValue(value: Double?, unit: String): String {
         return value?.let {
             // Escape % symbols to avoid format string crashes
@@ -89,5 +107,10 @@ class SensorsActivity : AppCompatActivity() {
         temperatureValue.text = "Error"
         humidityValue.text = "Error"
         moistureValue.text = "Error"
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        handler.removeCallbacksAndMessages(null)  // Stop periodic fetching when the activity is destroyed
     }
 }
