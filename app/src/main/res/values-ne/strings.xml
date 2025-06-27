@@ -10,6 +10,8 @@
     <string name="lorem_ipsum">लोरेम इप्सम डलर सिट अमेट, कन्सेक्टेचुर एडिपिसिङ एलिट। नलाम एगेट अ‍ैगुे अक निसि फेर्मेन्टम उल्ट्रिस।</string>
     <string name="first_fragment_label">पहिलो खण्ड</string>
     <string name="second_fragment_label">दोस्रो खण्ड</string>
+    <string name="product_image"> तस्वीर</string>
+    <string name="contact_seller">विक्रेता सम्पर्क गर्नुहोस्</string>
 
     <string name="nav_dashboard">ड्यासबोर्ड</string>
     <string name="nav_weather">मौसम</string>

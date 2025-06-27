@@ -1,5 +1,6 @@
 package com.example.agribuddy
 
+import com.example.agribuddy.model.Product
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -33,8 +34,6 @@ class MarketplaceFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        setupRecyclerView()
-
 
         // Initialize Firestore
         db = FirebaseFirestore.getInstance()
@@ -49,9 +48,20 @@ class MarketplaceFragment : Fragment() {
     }
 
     private fun setupRecyclerView() {
-        productAdapter = ProductAdapter(productList)
+        productAdapter = ProductAdapter(productList) { product ->
+            val intent = Intent(requireContext(), Product_ViewActivity::class.java).apply {
+                putExtra("PRODUCT_ID", product.id)
+                putExtra("PRODUCT_NAME", product.name)
+                putExtra("PRODUCT_PRICE", product.price.toString())
+                putExtra("PRODUCT_IMAGE", product.imageUrl)
+                putExtra("PRODUCT_DESCRIPTION", product.description ?: "")
+                putExtra("SELLER_EMAIL", product.userEmail ?: "")
+            }
+            startActivity(intent)
+        }
+
         binding.rvProducts.apply {
-            layoutManager = GridLayoutManager(requireContext(), 2) // 2 columns
+            layoutManager = GridLayoutManager(requireContext(), 2)
             adapter = productAdapter
             addItemDecoration(
                 DividerItemDecoration(
@@ -63,30 +73,19 @@ class MarketplaceFragment : Fragment() {
     }
 
     private fun fetchProductsFromFirebase() {
-        val userEmail = CurrentUser.email
-
-        if (userEmail.isNullOrEmpty()) {
-            Toast.makeText(requireContext(), "User email not found", Toast.LENGTH_SHORT).show()
-            showEmptyState()
-            return
-        }
-
         binding.progressBar.visibility = View.VISIBLE
-        Log.d("Marketplace", "Fetching products for user: $userEmail")
-
+        Log.d("Marketplace", "Fetching all products...")
         db.collection("products")
-            .whereEqualTo("userEmail", userEmail) // Filter products by email
             .get()
             .addOnSuccessListener { documents ->
-                Log.d("Marketplace", "Successfully fetched ${documents.size()} products for $userEmail")
-                productList.clear()
+                Log.d("Marketplace", "Successfully fetched ${documents.size()} products")
 
-                for (document in documents) {
+                productList.clear()
+                documents.forEach { document ->
                     try {
                         val product = document.toObject(Product::class.java)
                         product.id = document.id
                         productList.add(product)
-                        Log.d("Marketplace", "Added product: ${product.name} (ID: ${product.id})")
                     } catch (e: Exception) {
                         Log.e("Marketplace", "Error parsing product ${document.id}: ${e.message}")
                     }

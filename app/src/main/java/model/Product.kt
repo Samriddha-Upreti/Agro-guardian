@@ -1,14 +1,16 @@
-package com.example.agribuddy
+package com.example.agribuddy.model
+
 data class Product(
     var id: String = "",
     val name: String = "",
-    val price: Any = "", // Changed from String to Any
-    val imageUrl: String = ""
+    val price: Any = "",
+    val imageUrl: String = "",
+    val description: String? = null,  // Made nullable
+    val userEmail: String? = null     // Made nullable
 ) {
-    // Helper function to get price as String
     fun getPriceString(): String {
         return when (price) {
-            is Double -> "Rs. ${"%.2f".format(price)}" // Formats to $2.99
+            is Double -> "Rs. ${"%.2f".format(price)}"
             is String -> price
             else -> price.toString()
         }

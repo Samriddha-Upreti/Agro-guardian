@@ -1,5 +1,5 @@
 package com.example.agribuddy
-
+import com.example.agribuddy.model.Product
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -15,15 +15,16 @@ class ProductAdapter(
         RecyclerView.ViewHolder(binding.root) {
 
         fun bind(product: Product) {
-            // Correctly access binding without 'holder'
-            binding.tvProductName.text = product.name
-            binding.tvProductPrice.text = product.getPriceString()
+            with(binding) {
+                tvProductName.text = product.name
+                tvProductPrice.text = product.getPriceString()
 
-            Glide.with(binding.root.context)
-                .load(product.imageUrl)
-                .placeholder(R.drawable.ic_placeholder)
-                .error(R.drawable.sample_data)
-                .into(binding.imgProduct)
+                Glide.with(root.context)
+                    .load(product.imageUrl)
+                    .placeholder(R.drawable.ic_placeholder)
+                    .error(R.drawable.sample_data)
+                    .into(imgProduct)
+            }
         }
     }
 
@@ -42,5 +43,5 @@ class ProductAdapter(
         holder.itemView.setOnClickListener { onItemClick(product) }
     }
 
-    override fun getItemCount() = products.size
+    override fun getItemCount(): Int = products.size
 }
