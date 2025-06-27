@@ -8,10 +8,10 @@ import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.agribuddy.databinding.ActivityMainBinding
 import com.example.agribuddy.ui.settings.settings
+import com.google.firebase.auth.FirebaseAuth
 
 class MainActivity : AppCompatActivity() {
 
-    // 🔸 Add this function to apply saved locale
     override fun attachBaseContext(newBase: android.content.Context) {
         super.attachBaseContext(LocaleHelper.applyLocale(newBase))
     }
@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Toolbar and drawer setup
+        // Set up toolbar and drawer
         setSupportActionBar(binding.toolbar)
         drawerToggle = ActionBarDrawerToggle(
             this,
@@ -36,19 +36,19 @@ class MainActivity : AppCompatActivity() {
         binding.drawerLayout.addDrawerListener(drawerToggle)
         drawerToggle.syncState()
 
-        // Navigation menu click handler
+        // Handle navigation item clicks
         binding.navView.setNavigationItemSelectedListener { menuItem ->
             when (menuItem.itemId) {
                 R.id.nav_dashboard -> replaceFragment(DashboardFragment())
                 R.id.nav_settings -> replaceFragment(settings())
                 R.id.nav_weather -> replaceFragment(WeatherFragment())
                 R.id.nav_marketplace -> replaceFragment(MarketplaceFragment())
-
             }
             binding.drawerLayout.closeDrawers()
             true
         }
 
+        // Load default fragment
         if (savedInstanceState == null) {
             replaceFragment(DashboardFragment())
         }
@@ -57,12 +57,16 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun updateNavHeader() {
+        val user = FirebaseAuth.getInstance().currentUser
+        CurrentUser.name = user?.displayName
+        CurrentUser.email = user?.email
+
         val headerView = binding.navView.getHeaderView(0)
         val profileName = headerView.findViewById<TextView>(R.id.profile_name)
         val profileImage = headerView.findViewById<ImageView>(R.id.profile_image)
 
-        profileName.text = "Sandesh Prasai"
-        // Load profile image logic if needed
+        profileName.text = CurrentUser.name ?: "Guest"
+        profileImage.setImageResource(R.drawable.ic_profile) // default image
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
