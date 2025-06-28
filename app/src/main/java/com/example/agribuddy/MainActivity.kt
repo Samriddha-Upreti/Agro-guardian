@@ -21,6 +21,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var drawerToggle: ActionBarDrawerToggle
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        NotificationManagerSingleton.addNotification(this, "Title", "This is a test message")
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)

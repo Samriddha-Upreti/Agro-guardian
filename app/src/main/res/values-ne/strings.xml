@@ -1,103 +1,141 @@
 <resources>
     <!-- App Name -->
-    <string name="app_name">अग्रीबडी</string>
-    <string name="add_product">उत्पादन थप्नुहोस्</string>
-    <string name="no_values_added">No values Added</string>
+    <string name="app_name">अग्रीबड्डी</string>
+
+    <!-- Common Strings -->
+    <string name="no_values_added">कुनै मानहरू थपिएका छैनन्</string>
+    <string name="error_empty_fields">सप्ट कुरा आवश्यक छन्।</string>
 
     <!-- Navigation Strings -->
-    <string name="next">अगाडि</string>
-    <string name="previous">पछाडि</string>
-    <string name="lorem_ipsum">लोरेम इप्सम डलर सिट अमेट, कन्सेक्टेचुर एडिपिसिङ एलिट। नलाम एगेट अ‍ैगुे अक निसि फेर्मेन्टम उल्ट्रिस।</string>
-    <string name="first_fragment_label">पहिलो खण्ड</string>
-    <string name="second_fragment_label">दोस्रो खण्ड</string>
-    <string name="product_image"> तस्वीर</string>
-    <string name="contact_seller">विक्रेता सम्पर्क गर्नुहोस्</string>
-
     <string name="nav_dashboard">ड्यासबोर्ड</string>
     <string name="nav_weather">मौसम</string>
     <string name="nav_marketplace">बजार</string>
     <string name="nav_alerts">अलर्ट/सूचनाहरू</string>
-    <string name="nav_profile">प्रोफाइल/सेटिङहरू</string>
+    <string name="nav_profile">सेन्सरहरू</string>
     <string name="nav_alerts_badge">%d नयाँ</string>
-    <string name="settings_label">सेटिङहरू</string>
+    <string name="settings_label">सेटिङ्स</string>
     <string name="logout_label">लगआउट</string>
+    <string name="change_language">भाषा परिवर्तन गर्नुहोस्</string>
 
-    <!-- Fragment Default Strings -->
-    <string name="hello_blank_fragment">नमस्ते, ब्लाङ्क फ्रेगमेन्ट</string>
-    <string name="open">खोल्नुहोस्</string>
-    <string name="close">बन्द गर्नुहोस्</string>
+    <!-- Product Related -->
+    <string name="product_image">उत्पादन छवि</string>
+    <string name="contact_seller">विक्रेता सम्पर्क छवि</string>
+
+    <!-- Fragment Strings -->
+    <string name="hello_blank_fragment">नमस्ते, रिक्त खण्ड</string>
+    <string name="next">अर्को</string>
+    <string name="previous">अघिल्लो</string>
+    <string name="lorem_ipsum">लोरेम इप्सम डोलर सिट अमित, कन्सेक्टेटर अडिपिसिङ्ग एलिट।</string>
 
     <!-- Weather Strings -->
     <string name="weather_label">मौसम</string>
     <string name="temperature_format">%.1f°C</string>
-    <string name="feels_like_format">महसुस गरिरहेको तापमान: %.1f°C</string>
+    <string name="feels_like_format">महसुस गरिएको तापमान: %.1f°C</string>
     <string name="humidity_format">आर्द्रता: %d%%</string>
-    <string name="wind_speed_format">हावा गति: %.1f मिटर/सेकन्ड</string>
-    <string name="pressure_format">दबाब: %.1f hPa</string>
-    <string name="visibility_format">दृष्टिमानिता: %.1f किमी</string>
+    <string name="wind_speed_format">हावा गति: %.1f म/से</string>
+    <string name="pressure_format">दबाव: %.1f हेक्टापास्कल</string>
+    <string name="visibility_format">दृष्टि: %.1f किमी</string>
     <string name="sunrise_format">सूर्योदय: %s</string>
-
-    <!-- Weather Labels -->
-    <string name="feels_like_label">महसुस गरिरहेको तापमान</string>
-    <string name="humidity_label">आर्द्रता</string>
-    <string name="wind_label">हावा</string>
-    <string name="pressure_label">दबाब</string>
-    <string name="visibility_label">दृष्टिमानिता</string>
-    <string name="sunrise_label">सूर्योदय</string>
     <string name="sunset_format">सूर्यास्त: %s</string>
 
+    <!-- Weather Labels -->
+    <string name="feels_like_label">महसुस गरिएको तापमान</string>
+    <string name="humidity_label">आर्द्रता</string>
+    <string name="wind_label">हावा</string>
+    <string name="pressure_label">दबाव</string>
+    <string name="visibility_label">दृष्टि</string>
+    <string name="sunrise_label">सूर्योदय</string>
+
     <!-- Weather Icon Descriptions -->
-    <string name="weather_icon">मौसम आइकन</string>
-    <string name="feels_like_icon">महसुस गरिरहेको तापमान आइकन</string>
-    <string name="humidity_icon">आर्द्रता आइकन</string>
-    <string name="wind_icon">हावा आइकन</string>
-    <string name="pressure_icon">दबाब आइकन</string>
-    <string name="visibility_icon">दृष्टिमानिता आइकन</string>
-    <string name="sunrise_icon">सूर्योदय आइकन</string>
+    <string name="weather_icon">मौसमको चिन्ह</string>
+    <string name="feels_like_icon">महसुस गरिएको तापमान चिन्ह</string>
+    <string name="humidity_icon">आर्द्रता चिन्ह</string>
+    <string name="wind_icon">हावा चिन्ह</string>
+    <string name="pressure_icon">दबाव चिन्ह</string>
+    <string name="visibility_icon">दृष्टि चिन्ह</string>
+    <string name="sunrise_icon">सूर्योदय चिन्ह</string>
 
     <!-- User Registration -->
+    <string name="register_title">किसान दर्ता</string>
     <string name="already_have_account">पहिले नै खाता छ? यहाँ लगइन गर्नुहोस्</string>
-    <string name="register_title">कृषक दर्ता</string>
     <string name="hint_full_name">पूरा नाम</string>
-    <string name="hint_confirm_password">पासवर्ड पुष्टि गर्नुहोस्</string>
+    <string name="hint_email">तपाईंको इमेल लेख्नुहोस्</string>
+    <string name="hint_password">तपाईंको पासवर्ड लेख्नुहोस्</string>
+    <string name="hint_confirm_password">पासवर्ड पुन: लेख्नुहोस्</string>
     <string name="btn_register">दर्ता गर्नुहोस्</string>
-<!--    <string name="error_empty_fields">सबै फिल्डहरू आवश्यक छन्।</string>-->
-    <string name="error_password_mismatch">पासवर्ड मिल्दैन।</string>
-    <string name="registration_success">दर्ता सफल</string>
+    <string name="error_password_mismatch">पासवर्ड मिलेनन्।</string>
+    <string name="registration_success">दर्ता सफल भयो</string>
     <string name="registration_error">त्रुटि: %1$s</string>
     <string name="name_description">पूरा नाम</string>
     <string name="email_description">इमेल ठेगाना</string>
-    <string name="password_description">पासवर्ड (कम्तीमा ८ अक्षर)</string>
-    <string name="confirm_password_description">पासवर्ड पुष्टि गर्नुहोस्</string>
-    <!-- Empty string for dividers -->
-    <string name="empty_divider"></string>
+    <string name="password_description">पासवर्ड (कम्तीमा ८ अंकको)</string>
+    <string name="confirm_password_description">पासवर्ड पुन: लेख्नुहोस्</string>
 
     <!-- Login Page -->
     <string name="login_title">लगइन</string>
-    <string name="hint_email">तपाईंको इमेल प्रविष्ट गर्नुहोस्</string>
-    <string name="hint_password">तपाईंको पासवर्ड प्रविष्ट गर्नुहोस्</string>
     <string name="btn_login">लगइन गर्नुहोस्</string>
     <string name="register_prompt">खाता छैन? यहाँ दर्ता गर्नुहोस्</string>
     <string name="forgot_password">पासवर्ड बिर्सनुभयो?</string>
 
     <!-- MarketPlace Fragment -->
     <string name="marketplace">बजार</string>
-    <string name="search_products">बिउँ, उपकरण आदि खोज्नुहोस्</string>
+    <string name="search_products">बीउ, औजारहरू, आदि खोज्नुहोस्</string>
     <string name="product_name">उत्पादन नाम</string>
     <string name="product_price">मूल्य</string>
     <string name="post_product">उत्पादन पोस्ट गर्नुहोस्</string>
     <string name="buy_now">अहिले किन्नुहोस्</string>
     <string name="add_to_cart">कार्टमा थप्नुहोस्</string>
+    <string name="add_product">उत्पादन थप्नुहोस्</string>
 
-    <!--    Settings Page-->
-    <string name="change_language">भाषा परिवर्तन गर्नुहोस्</string>
+    <!-- Product Addition -->
+    <string name="hint_product_name">उत्पादन नाम</string>
+    <string name="hint_product_price">मूल्य (रु.)</string>
+    <string name="hint_product_description">वर्णन</string>
+    <string name="btn_add_product">उत्पादन थप्नुहोस्</string>
+    <string name="btn_pick_image">छवि छान्नुहोस्</string>
 
-    <!-- Product Addition (From new request) -->
-    <string name="hint_product_name">उत्पादनको नाम</string>
-    <string name="hint_product_price">मूल्य (रु)</string>
-    <string name="hint_product_description">विवरण</string>
-    <string name="btn_add_product">थप गर्नुहोस्</string>
-    <string name="error_empty_fields">कृपया सबै विवरणहरू भर्नुहोस्</string>
-    <string name="btn_pick_image">चित्र चयन गर्नुहोस्</string>
+    <!-- Sensor Data -->
+    <string name="fire_sensor_label">आगो सेन्सर</string>
+    <string name="fire_sensor_value">आगो सेन्सर: लोड गर्दै...</string>
 
+    <string name="pir_sensor_label">PIR सेन्सर (गति पत्ता लगाउनुहोस्)</string>
+    <string name="pir_sensor_value">लोड गर्दै...</string>
+
+    <string name="dht11_sensor_label">DHT11 सेन्सर</string>
+    <string name="temperature_label">तापमान: लोड गर्दै...</string>
+
+
+    <string name="soil_moisture_label">माटोको आर्द्रता</string>
+    <string name="moisture_value">माटोको आर्द्रता स्तर: लोड गर्दै...</string>
+
+    <!-- Progress Bar -->
+    <string name="progress_loading">लोड गर्दै...</string>
+    <string name="first_fragment_label">Your Label Text Here</string>
+    <string name="second_fragment_label">Your Label Text Here</string>
+    <string name="open">Open</string>
+    <string name="close">Open</string>
+
+    <string name="empty_divider"></string>
+
+<!--    Senser Info-->
+        <string name="google_play_required">Google Play सेवाहरू आवश्यक छन्</string>
+        <string name="firebase_db_url">https://agribuddy-24059-default-rtdb.asia-southeast1.firebasedatabase.app/</string>
+        <string name="error_loading_data">❌ डाटा लोड गर्न त्रुटि</string>
+        <string name="temperature_na">तापक्रम: उपलब्ध छैन</string>
+        <string name="humidity_na">आद्रता: उपलब्ध छैन</string>
+        <string name="alert_temp_title">उच्च तापक्रम चेतावनी</string>
+        <string name="alert_temp_msg">तापक्रम %.1f°C छ (सीमा: %.1f°C)</string>
+        <string name="alert_humidity_title">उच्च आद्रता चेतावनी</string>
+        <string name="alert_humidity_msg">आद्रता %.1f%% छ (सीमा: %.1f%%)</string>
+        <string name="motion_detected">गति पत्ता लाग्यो!</string>
+        <string name="motion_detected_msg">PIR सेन्सरले गति पत्ता लगाएको छ।</string>
+        <string name="no_motion">गति छैन</string>
+        <string name="fire_detected">आगो पत्ता लाग्यो!</string>
+        <string name="fire_detected_msg">क्षेत्रमा आगो लागेको पत्ता लागेको छ!</string>
+        <string name="no_fire">आगो छैन</string>
+        <string name="moisture_level">माटोको चिस्यान: %1$d%%</string>
+        <string name="error_text">त्रुटि</string>
+        <string name="offline_text">अफलाइन</string>
+        <string name="no_network">नेटवर्क जडान छैन</string>
+        <string name="unsupported_device">यो उपकरण समर्थित छैन</string>
 </resources>

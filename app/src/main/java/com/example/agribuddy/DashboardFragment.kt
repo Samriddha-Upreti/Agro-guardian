@@ -17,6 +17,7 @@ import com.example.agribuddy.model.Product
 
 class DashboardFragment : Fragment() {
 
+
     private var _binding: FragmentMarketplaceBinding? = null
     private val binding get() = _binding!!
     private lateinit var productAdapter: ProductAdapter

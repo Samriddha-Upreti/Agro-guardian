@@ -5,6 +5,8 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" /> <!-- For Android 13+ -->
+
 
     <application
         android:allowBackup="true"
@@ -17,25 +19,17 @@
         android:theme="@style/Theme.AgriBuddy"
         tools:targetApi="31">
         <activity
-            android:name=".SensorsData"
+            android:name=".SensorsActivity"
             android:exported="false" />
         <activity
-            android:name=".ProductView"
+            android:name=".Product_ViewActivity"
             android:exported="false" />
         <activity
             android:name=".AddProductActivity"
             android:exported="false" />
-        <activity
-            android:name=".LauncherActivity"
-            android:exported="false" />
-        <activity
-            android:name=".Settings"
-            android:exported="false"
-            android:theme="@style/Theme.AgriBuddy" />
-        <activity
-            android:name=".Product_ViewActivity"
-            android:exported="false"
-            android:theme="@style/Theme.AgriBuddy" />
+
+
+
         <activity
             android:name=".LoginActivity"
             android:exported="false" />
@@ -49,9 +43,6 @@
             android:name=".LanguageSelectionActivity"
             android:exported="false" />
         <activity
-            android:name=".SensorsActivity"
-            android:exported="false" />
-        <activity
             android:name=".SplashActivity"
             android:exported="true">
             <intent-filter>
@@ -60,6 +51,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <receiver android:name=".NotificationReceiver" android:enabled="true" android:exported="false"/>
+
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_icon"
+            android:resource="@drawable/ic_notifications" />
+
     </application>
 
 </manifest>

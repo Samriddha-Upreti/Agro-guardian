@@ -2,13 +2,8 @@
     <!-- App Name -->
     <string name="app_name">AgriBuddy</string>
 
-    <string name="no_values_added">No values Added</string>
     <!-- Common Strings -->
-    <string name="open">Open</string>
-    <string name="close">Close</string>
-    <string name="first_fragment_label">First Fragment</string>
-    <string name="second_fragment_label">Second Fragment</string>
-    <string name="empty_divider"></string>
+    <string name="no_values_added">No values Added</string>
     <string name="error_empty_fields">All fields are required.</string>
 
     <!-- Navigation Strings -->
@@ -21,12 +16,12 @@
     <string name="settings_label">Settings</string>
     <string name="logout_label">Logout</string>
     <string name="change_language">Change Language</string>
+
+    <!-- Product Related -->
     <string name="product_image">Product Image</string>
     <string name="contact_seller">Contact Seller Image</string>
 
-
     <!-- Fragment Strings -->
-
     <string name="hello_blank_fragment">Hello, Blank Fragment</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
@@ -98,4 +93,52 @@
     <string name="hint_product_description">Description</string>
     <string name="btn_add_product">Add Product</string>
     <string name="btn_pick_image">Pick an Image</string>
+
+    <!-- Sensor Data -->
+    <string name="fire_sensor_label">Fire Sensor</string>
+    <string name="fire_sensor_value">Fire Sensor: Loading...</string>
+
+    <string name="pir_sensor_label">PIR Sensor (Motion Detection)</string>
+    <string name="pir_sensor_value">Loading...</string>
+
+    <string name="dht11_sensor_label">DHT11 Sensor</string>
+    <string name="temperature_label">Temperature: Loading...</string>
+
+
+    <string name="soil_moisture_label">Soil Moisture</string>
+    <string name="moisture_value">Moisture Level: Loading...</string>
+
+    <!-- Progress Bar -->
+    <string name="progress_loading">Loading...</string>
+    <string name="first_fragment_label">Your Label Text Here</string>
+    <string name="second_fragment_label">Your Label Text Here</string>
+    <string name="open">Open</string>
+    <string name="close">Open</string>
+
+
+    <string name="empty_divider"></string>
+
+
+<!--    Sensor Info-->
+    <string name="google_play_required">Google Play Services required</string>
+    <string name="firebase_db_url">https://agribuddy-24059-default-rtdb.asia-southeast1.firebasedatabase.app/</string>
+    <string name="error_loading_data">❌ Error loading data</string>
+    <string name="temperature_na">Temperature: N/A</string>
+    <string name="humidity_na">Humidity: N/A</string>
+    <string name="alert_temp_title">High Temperature Alert</string>
+    <string name="alert_temp_msg">Temperature is %.1f°C (Threshold: %.1f°C)</string>
+    <string name="alert_humidity_title">High Humidity Alert</string>
+    <string name="alert_humidity_msg">Humidity is %.1f%% (Threshold: %.1f%%)</string>
+    <string name="motion_detected">Motion Detected!</string>
+    <string name="motion_detected_msg">PIR sensor has detected motion.</string>
+    <string name="no_motion">No Motion</string>
+    <string name="fire_detected">Fire Detected!</string>
+    <string name="fire_detected_msg">Fire has been detected in the area!</string>
+    <string name="no_fire">No Fire</string>
+    <string name="moisture_level">Moisture Level: %1$d%%</string>
+    <string name="error_text">Error</string>
+    <string name="offline_text">Offline</string>
+    <string name="no_network">No network connection</string>
+    <string name="unsupported_device">This device is not supported</string>
+
 </resources>
