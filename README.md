@@ -11,9 +11,15 @@ AgriBuddy is an Android application designed to assist farmers and agricultural 
 - **User-Friendly Interface**: Simple, easy-to-navigate UI to enhance user experience.
 
 ## Screenshots
+Here are some snapshots of AgriBuddy in action:
 
-![App Screenshot 1](link_to_screenshot1)
-![App Screenshot 2](link_to_screenshot2)
+<div>
+  <img src="screenshots/1.jpg" width="200" height="400" style="margin-right: 10px;"/>
+  <img src="screenshots/2.jpg" width="200" height="400" style="margin-right: 10px;"/>
+  <img src="screenshots/3.jpg" width="200" height="400" style="margin-right: 10px;"/>
+  <img src="screenshots/4.jpg" width="200" height="400" style="margin-right: 10px;"/>
+  <img src="screenshots/5.jpg" width="200" height="400"/>
+</div>
 
 ## Technologies Used
 
