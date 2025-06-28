@@ -9,7 +9,7 @@
     <!-- Navigation Strings -->
     <string name="nav_dashboard">ड्यासबोर्ड</string>
     <string name="nav_weather">मौसम</string>
-    <string name="nav_marketplace">बजार</string>
+    <string name="nav_marketplace">मेरो सूची</string>
     <string name="nav_alerts">अलर्ट/सूचनाहरू</string>
     <string name="nav_profile">सेन्सरहरू</string>
     <string name="nav_alerts_badge">%d नयाँ</string>

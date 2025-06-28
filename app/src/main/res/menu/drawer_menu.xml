@@ -1,20 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
     <!-- Main Section -->
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_dashboard"
             android:icon="@drawable/ic_dashboard"
-            android:title="@string/nav_dashboard" />
+            android:title="@string/nav_dashboard"
+            app:actionViewClass="androidx.appcompat.widget.LinearLayoutCompat"
+            android:actionLayout="@layout/nav_item_shadow" />
+
         <item
             android:id="@+id/nav_weather"
             android:icon="@drawable/ic_weather"
-            android:title="@string/weather_label" />
+            android:title="@string/weather_label"
+            app:actionViewClass="androidx.appcompat.widget.LinearLayoutCompat"
+            android:actionLayout="@layout/nav_item_shadow" />
 
         <item
             android:id="@+id/nav_marketplace"
             android:icon="@drawable/ic_marketplace"
-            android:title="@string/nav_marketplace" />
+            android:title="@string/nav_marketplace"
+            app:actionViewClass="androidx.appcompat.widget.LinearLayoutCompat"
+            android:actionLayout="@layout/nav_item_shadow" />
     </group>
 
     <!-- Alerts Section -->
@@ -24,26 +33,31 @@
         android:id="@+id/nav_alerts_badge"
         android:icon="@drawable/ic_notifications"
         android:title="@string/nav_alerts_badge"
-        android:enabled="false" />
-
-    <!-- Divider as title spacer -->
-    <item android:title="@string/empty_divider" />
+        android:enabled="false"
+        app:actionViewClass="androidx.appcompat.widget.LinearLayoutCompat"
+        android:actionLayout="@layout/nav_item_shadow" />
 
     <!-- Secondary Actions -->
     <group android:checkableBehavior="none">
         <item
             android:id="@+id/sensors"
             android:icon="@drawable/ic_profile"
-            android:title="@string/nav_profile" />
+            android:title="@string/nav_profile"
+            app:actionViewClass="androidx.appcompat.widget.LinearLayoutCompat"
+            android:actionLayout="@layout/nav_item_shadow" />
 
         <item
             android:id="@+id/nav_settings"
             android:icon="@drawable/ic_settings"
-            android:title="@string/settings_label" />
+            android:title="@string/settings_label"
+            app:actionViewClass="androidx.appcompat.widget.LinearLayoutCompat"
+            android:actionLayout="@layout/nav_item_shadow" />
 
         <item
             android:id="@+id/nav_logout"
             android:icon="@drawable/ic_logout"
-            android:title="@string/logout_label" />
+            android:title="@string/logout_label"
+            app:actionViewClass="androidx.appcompat.widget.LinearLayoutCompat"
+            android:actionLayout="@layout/nav_item_shadow" />
     </group>
 </menu>

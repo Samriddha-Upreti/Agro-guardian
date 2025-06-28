@@ -73,9 +73,18 @@ class MarketplaceFragment : Fragment() {
     }
 
     private fun fetchProductsFromFirebase() {
+        val currentUserEmail = CurrentUser.email ?: run {
+            Toast.makeText(requireContext(), "User not logged in", Toast.LENGTH_SHORT).show()
+            binding.progressBar.visibility = View.GONE
+            showEmptyState()
+            return
+        }
+
         binding.progressBar.visibility = View.VISIBLE
-        Log.d("Marketplace", "Fetching all products...")
+        Log.d("Marketplace", "Fetching products for user: $currentUserEmail")
+
         db.collection("products")
+            .whereEqualTo("userEmail", currentUserEmail) // Changed to match your Product model field
             .get()
             .addOnSuccessListener { documents ->
                 Log.d("Marketplace", "Successfully fetched ${documents.size()} products")
@@ -83,8 +92,9 @@ class MarketplaceFragment : Fragment() {
                 productList.clear()
                 documents.forEach { document ->
                     try {
-                        val product = document.toObject(Product::class.java)
-                        product.id = document.id
+                        val product = document.toObject(Product::class.java).apply {
+                            id = document.id
+                        }
                         productList.add(product)
                     } catch (e: Exception) {
                         Log.e("Marketplace", "Error parsing product ${document.id}: ${e.message}")
