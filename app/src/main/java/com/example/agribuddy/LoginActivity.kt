@@ -64,7 +64,12 @@ class LoginActivity : AppCompatActivity() {
                     CurrentUser.name = user?.displayName
                     CurrentUser.email = user?.email
 
+                    // Save the current user data to SharedPreferences
+                    saveCurrentUser()
+
                     Toast.makeText(this, "Welcome, ${CurrentUser.name ?: "User"}!", Toast.LENGTH_SHORT).show()
+
+                    // Navigate to MainActivity after successful login
                     startActivity(Intent(this, MainActivity::class.java))
                     finish()
                 } else {
@@ -75,6 +80,17 @@ class LoginActivity : AppCompatActivity() {
                     ).show()
                 }
             }
+    }
+
+    // Corrected saveCurrentUser method
+    fun saveCurrentUser() {
+        val prefs = getSharedPreferences("app_prefs", MODE_PRIVATE)
+        val editor = prefs.edit()
+
+        // Save the current user data into SharedPreferences
+        editor.putString("current_user_name", CurrentUser.name)
+        editor.putString("current_user_email", CurrentUser.email)
+        editor.apply()  // Commit the changes
     }
 
     private fun navigateToRegister() {
