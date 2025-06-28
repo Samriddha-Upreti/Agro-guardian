@@ -81,6 +81,8 @@ dependencies {
     // For image uploads
     // Testing
     implementation("com.google.android.gms:play-services-base:18.2.0")
+    implementation("com.squareup.okhttp3:okhttp:4.12.0") // ✅ Required line
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

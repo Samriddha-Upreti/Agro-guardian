@@ -140,5 +140,7 @@
     <string name="offline_text">Offline</string>
     <string name="no_network">No network connection</string>
     <string name="unsupported_device">This device is not supported</string>
+    <string name="imgbb_api_key">e73ef93d6d21ee1db0f77d4e696a28ed</string>
+
 
 </resources>

@@ -138,4 +138,6 @@
         <string name="offline_text">अफलाइन</string>
         <string name="no_network">नेटवर्क जडान छैन</string>
         <string name="unsupported_device">यो उपकरण समर्थित छैन</string>
+    <string name="imgbb_api_key">e73ef93d6d21ee1db0f77d4e696a28ed</string>
+
 </resources>
